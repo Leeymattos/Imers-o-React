@@ -1,0 +1,24 @@
+*{
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+html,
+body{
+
+  margin: 0;
+}
+
+Link{
+  color: inherit;
+}
+
+:root {
+  --primary :#DB202C;
+}
+
+#root {
+  min-height: calc(100vh - var(--bodyPaddingTop));
+  display: flex;
+  flex-direction: column;
+}
