@@ -1,8 +1,7 @@
 import styled from 'styled-components'
+import {Link} from 'react-router-dom'
 
-
-const Button = styled.button`
-  background-color: black;
+const LinkButton = styled(Link)`
   color: white;
   border: 1px solid white;
   box-sizing: border-box;
@@ -18,11 +17,12 @@ const Button = styled.button`
   transition: opacity .3s;
 
 
-  &:hover{
+  &:hover,
+  &:focus{
     opacity: .5;
   }
 
-  /*@media(max-width: 800px){
+  @media(max-width: 800px){
     position: fixed;
     left: 0;
     right: 0;
@@ -31,7 +31,9 @@ const Button = styled.button`
     border-radius: 0;
     border: 0;
     text-align: center;
-  }*/ 
+  }
 `
 
-export default Button
+
+export default LinkButton
+

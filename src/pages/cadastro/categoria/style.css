@@ -1,0 +1,20 @@
+.Link-Group{
+  display: flex;
+  align-items: center;
+
+  text-decoration: none;
+  color: var(--primary);
+  font-size: 20px;
+  font-weight: bold;
+
+
+  
+ margin-bottom: 15px;
+
+  
+  transition: opacity .3s;
+}
+
+.Link-Group:hover{
+  opacity: 0.8;
+}

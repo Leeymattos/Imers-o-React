@@ -18,7 +18,7 @@ Link{
 }
 
 #root {
-  min-height: calc(100vh - var(--bodyPaddingTop));
+  min-height: calc(100vh - 94px);
   display: flex;
   flex-direction: column;
 }
