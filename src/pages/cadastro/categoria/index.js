@@ -6,7 +6,7 @@ import './style.css'
 import FormField from '../../../components/FormField';
 import { FiArrowLeft } from 'react-icons/fi'
 import {useForm} from '../../../hooks/useForm'
-
+import URL from '../../../config'
 
 
 
@@ -29,8 +29,7 @@ export default function CadastroCategoria() {
 
   useEffect(() => {
 
-    const URL = window.location.hostname.includes('localhost')?
-    'http://localhost:8080/categorias' : 'https://serverleeymattos.herokuapp.com/categorias';
+    
 
     fetch(URL).then(async(respostaDoServidor) =>{
       const resposta = await respostaDoServidor.json()
