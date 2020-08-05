@@ -12,7 +12,7 @@ export default function Menu(){
         <img className='logo' src={logo} alt="logo"/>
       </Link>
 
-      <LinkButton to='/cadastro/video'>
+      <LinkButton to='cadastro/video'>
         Novo video
       </LinkButton>
       
