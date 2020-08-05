@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import './style.css'
 import FormField from '../../../components/FormField';
 import { FiArrowLeft } from 'react-icons/fi'
-import Buttonn from '../../../components/Button'
+import LinkButton from '../../../components/Link-Button'
 
 export default function CadastroCategoria() {
 
@@ -85,9 +85,9 @@ export default function CadastroCategoria() {
 
 
 
-          <Buttonn type='submit' style={{ marginBottom: 12 }}>
+          <LinkButton as='button' type='submit' style={{ background: 'black'}}>
             Cadastrar
-          </Buttonn>
+          </LinkButton>
         </div>
       </form>
 
