@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 
-const Button = styled.button`
+const Buttonn = styled.button`
   background-color: black;
   color: white;
   border: 1px solid white;
@@ -22,16 +22,6 @@ const Button = styled.button`
     opacity: .5;
   }
 
-  /*@media(max-width: 800px){
-    position: fixed;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: var(--primary);
-    border-radius: 0;
-    border: 0;
-    text-align: center;
-  }*/ 
 `
 
-export default Button
+export default Buttonn
