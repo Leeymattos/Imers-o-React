@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import PageDefault from '../../../components/pagedefault'
 import { Link } from 'react-router-dom';
 import './style.css'
 import FormField from '../../../components/FormField';
 import Button from '../../../components/Button'
-import {FiArrowLeft} from 'react-icons/fi'
+import { FiArrowLeft } from 'react-icons/fi'
 
 export default function CadastroCategoria() {
 
@@ -13,9 +13,21 @@ export default function CadastroCategoria() {
     descricao: '',
     cor: '#000000'
   }
-
   const [categoria, setCategoria] = useState([])
   const [values, setValues] = useState(valoresIniciais)
+
+
+  useEffect(() => {
+    const URL = 'http://localhost:8080/categorias'
+    fetch(URL).then(async(respostaDoServidor) =>{
+      const resposta = await respostaDoServidor.json()
+      setCategoria([
+        ...resposta,
+      ])
+    })
+  }, [])
+
+ 
 
   function setValue(chave, valor) {
     setValues({
@@ -73,11 +85,17 @@ export default function CadastroCategoria() {
 
 
 
-          <Button type='submit' style={{marginBottom: 12}}>
+          <Button type='submit' style={{ marginBottom: 12 }}>
             Cadastrar
           </Button>
         </div>
       </form>
+
+      {categoria.length === 0 &&(
+        <div>
+          Loading...
+        </div>
+      )}
 
       <ul>
         {categoria.map((categoria, indice) => {
@@ -90,12 +108,12 @@ export default function CadastroCategoria() {
       </ul>
 
 
-      
-        <Link to='/' className='Link-Group'>
-          <FiArrowLeft width={20} color='#DB202C'/>Ir para home
+
+      <Link to='/' className='Link-Group'>
+        <FiArrowLeft width={20} color='#DB202C' />Ir para home
         </Link>
-    
-      
+
+
     </PageDefault>
   )
 }
