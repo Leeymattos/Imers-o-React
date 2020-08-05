@@ -3,7 +3,6 @@ import PageDefault from '../../../components/pagedefault'
 import { Link } from 'react-router-dom';
 import './style.css'
 import FormField from '../../../components/FormField';
-import Button from '../../../components/Button'
 import { FiArrowLeft } from 'react-icons/fi'
 
 export default function CadastroCategoria() {
@@ -85,9 +84,9 @@ export default function CadastroCategoria() {
 
 
 
-          <Button type='submit' style={{ marginBottom: 12 }}>
+          <button type='submit' style={{ marginBottom: 12 }}>
             Cadastrar
-          </Button>
+          </button>
         </div>
       </form>
 
