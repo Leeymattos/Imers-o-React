@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import './style.css'
 import FormField from '../../../components/FormField';
 import { FiArrowLeft } from 'react-icons/fi'
-import Button from '../../../components/Button'
+import Button from '../../../components/LinkBTN'
 
 export default function CadastroCategoria() {
 
