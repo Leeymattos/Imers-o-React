@@ -1,11 +1,20 @@
 {
   "categorias": [
-    {
-      "Id": 1,
+    { 
+      "id": 1,
       "nome": "Front End",
       "descricao": "Uma Categoria ",
       "cor": "#cbd1ff"
-    } 
+   } 
+  ],
+
+  "videos": [
+    {
+      "id":1,
+      "categoriaId":1,
+      "Título": "Weslley",
+      "url": "https://www.youtube.com/watch?v=4THzXWamis0"
+    }
   ]
 
 }

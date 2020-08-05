@@ -17,8 +17,7 @@ const Button = styled(Link)`
   transition: opacity .3s;
 
 
-  &:hover,
-  &:focus{
+  &:hover{
     opacity: .5;
   }
 

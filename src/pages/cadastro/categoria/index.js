@@ -5,6 +5,10 @@ import { Link } from 'react-router-dom';
 import './style.css'
 import FormField from '../../../components/FormField';
 import { FiArrowLeft } from 'react-icons/fi'
+import {useForm} from '../../../hooks/useForm'
+
+
+
 
 
 export default function CadastroCategoria() {
@@ -14,12 +18,20 @@ export default function CadastroCategoria() {
     descricao: '',
     cor: '#000000'
   }
-  const [categoria, setCategoria] = useState([])
-  const [values, setValues] = useState(valoresIniciais)
 
+  const [categoria, setCategoria] = useState([])
+  
+  const {handleChange, values, clearForm} = useForm(valoresIniciais)
+
+
+  
+  
 
   useEffect(() => {
-    const URL = 'http://localhost:8080/categorias'
+
+    const URL = window.location.hostname.includes('localhost')?
+    'http://localhost:8080/categorias' : 'https://serverleeymattos.herokuapp.com/categorias';
+
     fetch(URL).then(async(respostaDoServidor) =>{
       const resposta = await respostaDoServidor.json()
       setCategoria([
@@ -28,15 +40,6 @@ export default function CadastroCategoria() {
     })
   }, [])
 
- 
-
-  function setValue(chave, valor) {
-    setValues({
-      ...values,
-      [chave]: valor,  //nome: "valor"
-    })                 //descrição: "valor"
-  }
-
 
   function handleSubmit(e) {
     e.preventDefault()
@@ -44,15 +47,9 @@ export default function CadastroCategoria() {
       ...categoria,
       values
     ])
-    setValues(valoresIniciais)
+    clearForm()
   }
-  function handleChange(e) {
-    setValue(
-      e.target.getAttribute('name'),
-      e.target.value
-    )
-  }
-
+  
   return (
     <PageDefault>
       <h1>Cadastro de Categoria: {values.nome}</h1>
